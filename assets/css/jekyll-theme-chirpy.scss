@@ -1,0 +1,373 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* Nord palette tokens */
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+}
+
+/* Dark mode: Nord Polar Night */
+html[data-mode='dark'] {
+  --main-bg: var(--nord0);
+  --mask-bg: var(--nord3);
+  --main-border-color: var(--nord3);
+
+  --text-color: var(--nord4);
+  --text-muted-color: #a7b1c2;
+  --text-muted-highlight-color: var(--nord5);
+  --heading-color: var(--nord6);
+  --label-color: var(--nord4);
+  --blockquote-border-color: var(--nord3);
+  --blockquote-text-color: var(--nord4);
+  --link-color: var(--nord8);
+  --link-underline-color: var(--nord10);
+  --button-bg: var(--nord1);
+  --btn-border-color: var(--nord3);
+  --btn-backtotop-color: var(--nord6);
+  --btn-backtotop-border-color: var(--nord3);
+
+  --site-title-color: var(--nord6);
+  --site-subtitle-color: var(--nord4);
+  --sidebar-bg: var(--nord1);
+  --sidebar-border-color: var(--nord3);
+  --sidebar-muted-color: var(--nord4);
+  --sidebar-active-color: var(--nord6);
+  --sidebar-hover-bg: var(--nord2);
+  --sidebar-btn-bg: var(--nord2);
+  --sidebar-btn-color: var(--nord8);
+  --avatar-border-color: var(--nord8);
+
+  --topbar-bg: rgb(46 52 64 / 86%);
+  --topbar-text-color: var(--nord6);
+  --search-border-color: var(--nord3);
+  --search-icon-color: var(--nord8);
+  --input-focus-border-color: var(--nord8);
+
+  --post-list-text-color: var(--nord4);
+  --btn-patinator-text-color: var(--nord6);
+  --btn-paginator-hover-color: var(--nord2);
+
+  --toc-highlight: var(--nord7);
+  --toc-popup-border-color: var(--nord3);
+  --tag-hover: var(--nord2);
+  --tb-odd-bg: var(--nord1);
+  --tb-even-bg: var(--nord2);
+  --tb-border-color: var(--nord3);
+  --footnote-target-bg: var(--nord10);
+  --btn-share-color: var(--nord9);
+  --btn-share-hover-color: var(--nord8);
+  --card-bg: var(--nord1);
+  --card-hover-bg: var(--nord2);
+  --card-shadow: rgb(15 20 27 / 72%) 0 6px 18px 0, rgb(76 86 106 / 28%) 0 0 0 1px;
+
+  --tag-border: var(--nord3);
+  --tag-shadow: var(--nord0);
+  --dash-color: var(--nord3);
+  --search-tag-bg: var(--nord2);
+
+  --categories-border: rgb(216 222 233 / 22%);
+  --categories-hover-bg: var(--nord3);
+  --categories-icon-hover-color: var(--nord6);
+
+  --timeline-node-bg: var(--nord9);
+  --timeline-color: var(--nord3);
+  --timeline-year-dot-color: var(--nord1);
+
+  --language-border-color: var(--nord3);
+  --highlight-bg-color: #2b303b;
+  --highlighter-rouge-color: var(--nord5);
+  --highlight-lineno-color: var(--nord9);
+  --inline-code-bg: rgb(236 239 244 / 8%);
+  --code-color: var(--nord5);
+  --code-header-text-color: var(--nord4);
+  --code-header-muted-color: var(--nord3);
+  --code-header-icon-color: var(--nord9);
+  --clipboard-checked-color: #a3be8c;
+  --filepath-text-color: var(--nord6);
+
+  --nord-link-hover: var(--nord7);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) {
+    --main-bg: var(--nord0);
+    --mask-bg: var(--nord3);
+    --main-border-color: var(--nord3);
+
+    --text-color: var(--nord4);
+    --text-muted-color: #a7b1c2;
+    --text-muted-highlight-color: var(--nord5);
+    --heading-color: var(--nord6);
+    --label-color: var(--nord4);
+    --blockquote-border-color: var(--nord3);
+    --blockquote-text-color: var(--nord4);
+    --link-color: var(--nord8);
+    --link-underline-color: var(--nord10);
+    --button-bg: var(--nord1);
+    --btn-border-color: var(--nord3);
+    --btn-backtotop-color: var(--nord6);
+    --btn-backtotop-border-color: var(--nord3);
+
+    --site-title-color: var(--nord6);
+    --site-subtitle-color: var(--nord4);
+    --sidebar-bg: var(--nord1);
+    --sidebar-border-color: var(--nord3);
+    --sidebar-muted-color: var(--nord4);
+    --sidebar-active-color: var(--nord6);
+    --sidebar-hover-bg: var(--nord2);
+    --sidebar-btn-bg: var(--nord2);
+    --sidebar-btn-color: var(--nord8);
+    --avatar-border-color: var(--nord8);
+
+    --topbar-bg: rgb(46 52 64 / 86%);
+    --topbar-text-color: var(--nord6);
+    --search-border-color: var(--nord3);
+    --search-icon-color: var(--nord8);
+    --input-focus-border-color: var(--nord8);
+
+    --post-list-text-color: var(--nord4);
+    --btn-patinator-text-color: var(--nord6);
+    --btn-paginator-hover-color: var(--nord2);
+
+    --toc-highlight: var(--nord7);
+    --toc-popup-border-color: var(--nord3);
+    --tag-hover: var(--nord2);
+    --tb-odd-bg: var(--nord1);
+    --tb-even-bg: var(--nord2);
+    --tb-border-color: var(--nord3);
+    --footnote-target-bg: var(--nord10);
+    --btn-share-color: var(--nord9);
+    --btn-share-hover-color: var(--nord8);
+    --card-bg: var(--nord1);
+    --card-hover-bg: var(--nord2);
+    --card-shadow: rgb(15 20 27 / 72%) 0 6px 18px 0, rgb(76 86 106 / 28%) 0 0 0 1px;
+
+    --tag-border: var(--nord3);
+    --tag-shadow: var(--nord0);
+    --dash-color: var(--nord3);
+    --search-tag-bg: var(--nord2);
+
+    --categories-border: rgb(216 222 233 / 22%);
+    --categories-hover-bg: var(--nord3);
+    --categories-icon-hover-color: var(--nord6);
+
+    --timeline-node-bg: var(--nord9);
+    --timeline-color: var(--nord3);
+    --timeline-year-dot-color: var(--nord1);
+
+    --language-border-color: var(--nord3);
+    --highlight-bg-color: #2b303b;
+    --highlighter-rouge-color: var(--nord5);
+    --highlight-lineno-color: var(--nord9);
+    --inline-code-bg: rgb(236 239 244 / 8%);
+    --code-color: var(--nord5);
+    --code-header-text-color: var(--nord4);
+    --code-header-muted-color: var(--nord3);
+    --code-header-icon-color: var(--nord9);
+    --clipboard-checked-color: #a3be8c;
+    --filepath-text-color: var(--nord6);
+
+    --nord-link-hover: var(--nord7);
+  }
+}
+
+/* Light mode: Nord Snow Storm */
+html[data-mode='light'] {
+  --main-bg: var(--nord6);
+  --mask-bg: #c2cad8;
+  --main-border-color: var(--nord4);
+
+  --text-color: var(--nord0);
+  --text-muted-color: var(--nord3);
+  --text-muted-highlight-color: var(--nord2);
+  --heading-color: var(--nord0);
+  --label-color: var(--nord2);
+  --blockquote-border-color: var(--nord4);
+  --blockquote-text-color: var(--nord3);
+  --link-color: var(--nord10);
+  --link-underline-color: var(--nord9);
+  --button-bg: var(--nord6);
+  --btn-border-color: var(--nord4);
+
+  --site-title-color: var(--nord0);
+  --site-subtitle-color: var(--nord2);
+  --sidebar-bg: var(--nord5);
+  --sidebar-border-color: var(--nord4);
+  --sidebar-muted-color: var(--nord2);
+  --sidebar-active-color: var(--nord0);
+  --sidebar-hover-bg: var(--nord4);
+  --sidebar-btn-bg: var(--nord6);
+  --sidebar-btn-color: var(--nord10);
+  --avatar-border-color: var(--nord6);
+
+  --topbar-bg: rgb(236 239 244 / 88%);
+  --topbar-text-color: var(--nord0);
+  --search-border-color: var(--nord4);
+  --search-icon-color: var(--nord10);
+  --input-focus-border-color: var(--nord10);
+
+  --post-list-text-color: var(--nord2);
+  --btn-patinator-text-color: var(--nord2);
+  --btn-paginator-hover-color: var(--nord4);
+
+  --toc-highlight: var(--nord10);
+  --toc-popup-border-color: var(--nord4);
+  --card-bg: #f4f6fa;
+  --card-hover-bg: var(--nord4);
+  --card-shadow: rgb(76 86 106 / 9%) 0 2px 6px 0, rgb(129 161 193 / 14%) 0 0 0 1px;
+
+  --tag-border: var(--nord4);
+  --tag-shadow: var(--nord4);
+  --tag-hover: #d2d9e6;
+  --dash-color: #c3ccdc;
+  --search-tag-bg: #edf0f6;
+
+  --categories-border: rgb(59 66 82 / 12%);
+  --categories-hover-bg: var(--nord4);
+  --categories-icon-hover-color: var(--nord0);
+
+  --timeline-node-bg: var(--nord9);
+  --timeline-color: #c3ccdc;
+  --timeline-year-dot-color: var(--nord6);
+
+  --language-border-color: var(--nord4);
+  --highlight-bg-color: #e5e9f0;
+  --highlighter-rouge-color: var(--nord0);
+  --highlight-lineno-color: var(--nord3);
+  --inline-code-bg: rgb(59 66 82 / 7%);
+  --code-color: var(--nord0);
+
+  --nord-link-hover: var(--nord10);
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-mode]) {
+    --main-bg: var(--nord6);
+    --mask-bg: #c2cad8;
+    --main-border-color: var(--nord4);
+
+    --text-color: var(--nord0);
+    --text-muted-color: var(--nord3);
+    --text-muted-highlight-color: var(--nord2);
+    --heading-color: var(--nord0);
+    --label-color: var(--nord2);
+    --blockquote-border-color: var(--nord4);
+    --blockquote-text-color: var(--nord3);
+    --link-color: var(--nord10);
+    --link-underline-color: var(--nord9);
+    --button-bg: var(--nord6);
+    --btn-border-color: var(--nord4);
+
+    --site-title-color: var(--nord0);
+    --site-subtitle-color: var(--nord2);
+    --sidebar-bg: var(--nord5);
+    --sidebar-border-color: var(--nord4);
+    --sidebar-muted-color: var(--nord2);
+    --sidebar-active-color: var(--nord0);
+    --sidebar-hover-bg: var(--nord4);
+    --sidebar-btn-bg: var(--nord6);
+    --sidebar-btn-color: var(--nord10);
+    --avatar-border-color: var(--nord6);
+
+    --topbar-bg: rgb(236 239 244 / 88%);
+    --topbar-text-color: var(--nord0);
+    --search-border-color: var(--nord4);
+    --search-icon-color: var(--nord10);
+    --input-focus-border-color: var(--nord10);
+
+    --post-list-text-color: var(--nord2);
+    --btn-patinator-text-color: var(--nord2);
+    --btn-paginator-hover-color: var(--nord4);
+
+    --toc-highlight: var(--nord10);
+    --toc-popup-border-color: var(--nord4);
+    --card-bg: #f4f6fa;
+    --card-hover-bg: var(--nord4);
+    --card-shadow: rgb(76 86 106 / 9%) 0 2px 6px 0, rgb(129 161 193 / 14%) 0 0 0 1px;
+
+    --tag-border: var(--nord4);
+    --tag-shadow: var(--nord4);
+    --tag-hover: #d2d9e6;
+    --dash-color: #c3ccdc;
+    --search-tag-bg: #edf0f6;
+
+    --categories-border: rgb(59 66 82 / 12%);
+    --categories-hover-bg: var(--nord4);
+    --categories-icon-hover-color: var(--nord0);
+
+    --timeline-node-bg: var(--nord9);
+    --timeline-color: #c3ccdc;
+    --timeline-year-dot-color: var(--nord6);
+
+    --language-border-color: var(--nord4);
+    --highlight-bg-color: #e5e9f0;
+    --highlighter-rouge-color: var(--nord0);
+    --highlight-lineno-color: var(--nord3);
+    --inline-code-bg: rgb(59 66 82 / 7%);
+    --code-color: var(--nord0);
+
+    --nord-link-hover: var(--nord10);
+  }
+}
+
+/* Replace Chirpy's hardcoded orange link hover with Nord accent */
+#page-category a:hover,
+#page-tag a:hover,
+#access-lastmod a:hover,
+.post-tail-wrapper .license-wrapper > a:hover,
+#search-results a:hover,
+footer a:hover,
+#topbar #breadcrumb a:hover,
+.post-meta a:not([class]):hover,
+.content a:not(.img-link):hover {
+  color: var(--nord-link-hover) !important;
+  border-bottom: 1px solid var(--nord-link-hover);
+}
+
+/* Keep CTA buttons aligned with the active Nord link color */
+.btn-outline-primary {
+  --bs-btn-color: var(--link-color);
+  --bs-btn-border-color: var(--link-color);
+  --bs-btn-hover-color: var(--main-bg);
+  --bs-btn-hover-bg: var(--link-color);
+  --bs-btn-hover-border-color: var(--link-color);
+  --bs-btn-active-color: var(--main-bg);
+  --bs-btn-active-bg: var(--link-color);
+  --bs-btn-active-border-color: var(--link-color);
+  --bs-btn-disabled-color: var(--link-color);
+  --bs-btn-disabled-border-color: var(--link-color);
+}
+
+/* Subtle Nord treatment for the custom home hero block */
+.home-hero {
+  background: linear-gradient(
+    140deg,
+    rgb(136 192 208 / 14%) 0%,
+    rgb(94 129 172 / 12%) 44%,
+    var(--card-bg) 100%
+  );
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.75rem;
+  box-shadow: var(--card-shadow);
+}
+
+.home-hero h2 {
+  color: var(--heading-color);
+}

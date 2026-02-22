@@ -1,0 +1,38 @@
+location: "Cambridge, UK"
+timezone: "Europe/London"
+
+current_focus:
+  - "LLMs for scientific workflows"
+  - "GPU performance and inference optimization"
+  - "Reproducible Linux-first ML tooling"
+
+tools_stack:
+  - section: "Operating Systems"
+    items:
+      - name: "Arch Linux"
+        url: "https://archlinux.org/"
+        note: "My primary OS for development, experimentation and compute. Checkout my dotfiles for more details."
+      - name: "macOS"
+        url: "https://www.apple.com/macos/"
+        note: "My daily driver for general use and development."
+
+  - section: "Dev Tools"
+    items:
+      - name: "uv"
+        url: "https://docs.astral.sh/uv/"
+        note: "My preferred Python package and project manager. Couldn't imagine building Python projects without it."
+      - name: "ruff"
+        url: "https://docs.astral.sh/ruff/"
+        note: "For linting and formatting Python code. Has replaced both flake8 and black in my workflow."
+
+  # - section: "Python Packages"
+  #   items:
+  #     - name: "PyTorch"
+  #       url: "https://pytorch.org/"
+  #       note: "Core deep learning framework for model experimentation."
+  #     - name: "Transformers"
+  #       url: "https://huggingface.co/docs/transformers/index"
+  #       note: "High-level APIs for modern LLM workflows."
+  #     - name: "NumPy"
+  #       url: "https://numpy.org/"
+  #       note: "Fundamental numerical building block for scientific Python."
