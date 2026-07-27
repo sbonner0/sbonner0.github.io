@@ -372,3 +372,51 @@ footer a:hover,
 .home-hero h2 {
   color: var(--heading-color);
 }
+
+.hero-avatar {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid var(--avatar-border-color);
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted-color);
+  font-size: 0.95rem;
+
+  &:hover {
+    color: var(--nord-link-hover);
+  }
+}
+
+.hero-focus-pill {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  color: var(--text-color);
+  font-size: 0.85rem;
+}
+
+/* Smooth, subtle lift on post card hover instead of an instant color snap */
+.card-wrapper {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-2px);
+}
+
+/* Auto-generated post-cover SVGs (post-cover.svg) fill their card slot the
+   same way the theme's <img> object-fit rule does for uploaded images */
+.preview-img svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

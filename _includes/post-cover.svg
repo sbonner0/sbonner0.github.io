@@ -1,0 +1,54 @@
+{%- comment -%}
+  Auto-generated post cover: a Nord-gradient banner with the post title
+  laid out on it. No image needs to be created per post - this renders
+  straight from post.title / post.categories at build time.
+
+  Called from _layouts/home.html with the post's title and first category.
+{%- endcomment -%}
+{%- assign cat = include.category | default: "" -%}
+{%- case cat -%}
+  {%- when "llm" -%}
+    {%- assign c1 = "#4c566a" -%}
+    {%- assign c2 = "#88c0d0" -%}
+  {%- when "linux" -%}
+    {%- assign c1 = "#434c5e" -%}
+    {%- assign c2 = "#8fbcbb" -%}
+  {%- else -%}
+    {%- assign c1 = "#434c5e" -%}
+    {%- assign c2 = "#81a1c1" -%}
+{%- endcase -%}
+
+{%- assign lines = include.title | wrap_lines: 20 -%}
+{%- assign line_count = lines.size -%}
+
+{%- if line_count >= 4 -%}
+  {%- assign font_size = 38 -%}
+  {%- assign line_height = 46 -%}
+{%- elsif line_count == 3 -%}
+  {%- assign font_size = 44 -%}
+  {%- assign line_height = 54 -%}
+{%- else -%}
+  {%- assign font_size = 50 -%}
+  {%- assign line_height = 60 -%}
+{%- endif -%}
+
+{%- assign total_height = line_count | times: line_height -%}
+{%- assign top_gap = 420 | minus: total_height | divided_by: 2 -%}
+{%- assign start_y = top_gap | plus: font_size -%}
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="{{ include.title | xml_escape }}">
+  <defs>
+    <linearGradient id="cover-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="{{ c1 }}"/>
+      <stop offset="100%" stop-color="{{ c2 }}"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" fill="url(#cover-grad)"/>
+  <rect x="0" y="0" width="6" height="420" fill="{{ c2 }}"/>
+  <text font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="{{ font_size }}" fill="#eceff4">
+    {%- for line in lines -%}
+      {%- assign line_y = forloop.index0 | times: line_height | plus: start_y -%}
+      <tspan x="56" y="{{ line_y }}">{{ line | xml_escape }}</tspan>
+    {%- endfor -%}
+  </text>
+</svg>

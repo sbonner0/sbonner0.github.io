@@ -4,6 +4,7 @@ date: 2026-01-03 09:00:00 +0000
 categories: [llm]
 tags: [intel arc, gpu, local LLMs]
 pin: false
+image: /assets/img/posts/cover-demystifying.svg
 ---
 
 As I touched on in my previous [post](https://sbonner0.github.io/posts/intel-arc/), I have been investigating local LLM offerings on Intel GPUs. As part of this, I had to gain familiarity with different nomenclature to what I was used having historically only used NVIDIA hardware. This blog aims to be a quick demystification of some of these terms. It is not an exhaustive list of relevant ones, just some that stuck with me now I am more familiar with the Intel ecosystem. This post focuses on the SYCL execution stack rather Vulkan or others.

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e3440"/>
+      <stop offset="100%" stop-color="#3b4252"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="15%" cy="85%" r="60%">
+      <stop offset="0%" stop-color="#81a1c1" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#81a1c1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="layer5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5e81ac"/>
+      <stop offset="100%" stop-color="#81a1c1"/>
+    </linearGradient>
+    <linearGradient id="layer4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#81a1c1"/>
+      <stop offset="100%" stop-color="#88c0d0"/>
+    </linearGradient>
+    <linearGradient id="layer3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#88c0d0"/>
+      <stop offset="100%" stop-color="#8fbcbb"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- software stack diagram -->
+  <g font-family="Menlo, Consolas, monospace" font-size="21" font-weight="700" text-anchor="middle">
+    <rect x="330" y="185" width="540" height="66" rx="10" fill="#3b4252" stroke="#4c566a" stroke-width="2"/>
+    <text x="600" y="226" fill="#eceff4">Local LLM Application</text>
+
+    <rect x="360" y="266" width="480" height="66" rx="10" fill="url(#layer3)"/>
+    <text x="600" y="307" fill="#2e3440">oneAPI / SYCL</text>
+
+    <rect x="390" y="347" width="420" height="66" rx="10" fill="url(#layer4)"/>
+    <text x="600" y="388" fill="#2e3440">Level Zero Runtime</text>
+
+    <rect x="420" y="428" width="360" height="66" rx="10" fill="url(#layer5)"/>
+    <text x="600" y="469" fill="#eceff4">Intel GPU Kernel Driver</text>
+
+    <rect x="450" y="509" width="300" height="60" rx="10" fill="#2e3440" stroke="#5e81ac" stroke-width="2"/>
+    <text x="600" y="548" fill="#88c0d0">Intel Arc Hardware</text>
+  </g>
+
+  <!-- connecting arrows -->
+  <g stroke="#4c566a" stroke-width="3" fill="none">
+    <line x1="600" y1="251" x2="600" y2="266"/>
+    <line x1="600" y1="332" x2="600" y2="347"/>
+    <line x1="600" y1="413" x2="600" y2="428"/>
+    <line x1="600" y1="494" x2="600" y2="509"/>
+  </g>
+</svg>

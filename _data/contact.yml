@@ -24,6 +24,10 @@
   icon: 'fas fa-graduation-cap'
   url: 'https://scholar.google.com/citations?user=NhwYLnUAAAAJ&hl=en&oi=ao'
 
+- type: orcid
+  icon: 'ai ai-orcid'   # icon powered by <https://jpswalsh.github.io/academicons/>
+  url: 'https://orcid.org/0000-0001-6008-358X'
+
 # - type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
 #   url:  ''                  # Fill with your stackoverflow homepage
