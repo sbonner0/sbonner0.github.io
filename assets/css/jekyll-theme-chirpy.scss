@@ -24,7 +24,7 @@
 }
 
 /* Dark mode: Nord Polar Night */
-html[data-mode='dark'] {
+:root[data-bs-theme='dark'] {
   --main-bg: var(--nord0);
   --mask-bg: var(--nord3);
   --main-border-color: var(--nord3);
@@ -106,7 +106,7 @@ html[data-mode='dark'] {
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([data-mode]) {
+  :root:not([data-bs-theme]) {
     --main-bg: var(--nord0);
     --mask-bg: var(--nord3);
     --main-border-color: var(--nord3);
@@ -189,7 +189,7 @@ html[data-mode='dark'] {
 }
 
 /* Light mode: Nord Snow Storm */
-html[data-mode='light'] {
+:root[data-bs-theme='light'] {
   --main-bg: var(--nord6);
   --mask-bg: #c2cad8;
   --main-border-color: var(--nord4);
@@ -258,7 +258,7 @@ html[data-mode='light'] {
 }
 
 @media (prefers-color-scheme: light) {
-  html:not([data-mode]) {
+  :root:not([data-bs-theme]) {
     --main-bg: var(--nord6);
     --mask-bg: #c2cad8;
     --main-border-color: var(--nord4);
