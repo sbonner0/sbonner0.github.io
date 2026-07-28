@@ -20,7 +20,7 @@ Please feel free to contact me on [Linkedin](https://uk.linkedin.com/in/stephen-
 Some current areas of focus and interest (outside of my day job) include:
 
 {% for item in site.data.profile.current_focus %}
-- {{ item }}
+- {{ item.text | default: item }}
 {% endfor %}
 
 ## Tools Stack

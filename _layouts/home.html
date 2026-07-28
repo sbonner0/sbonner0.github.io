@@ -6,7 +6,7 @@ refactor: true
 {% include lang.html %}
 
 <!-- Welcome Section -->
-<div class="home-hero mb-4 p-4">
+<div class="home-hero home-hero-animate mb-4 p-4">
   <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 mb-3">
     {% if site.avatar and site.avatar != empty %}
       {%- comment -%}
@@ -23,6 +23,9 @@ refactor: true
     {% endif %}
 
     <div>
+      {% if site.tagline %}
+        <p class="hero-eyebrow mb-1">Personal Blog &middot; {{ site.tagline }}</p>
+      {% endif %}
       <h2 class="mb-2">Welcome</h2>
 
       <div class="hero-links d-flex flex-wrap gap-3">
@@ -62,24 +65,38 @@ refactor: true
   </div>
 
   <p>
-    Hi, I'm Stephen Bonner — a machine learning researcher currently working in
-    pre-clinical drug discovery at AstraZeneca. I'm particularly interested in
-    LLMs for scientific usecases, GPU performance, open-source software, and
-    Linux-based systems. This blog documents experiments, deep-dives, and lessons
-    learned—especially when things don't go quite as planned.
+    Hi, I'm Stephen Bonner — an ML researcher at AstraZeneca working on LLMs for
+    science, GPU performance, and Linux-based tooling. This blog covers
+    experiments, deep-dives, and the occasional failure.
   </p>
 
   {% if site.data.profile.current_focus %}
     <div class="hero-focus d-flex flex-wrap gap-2 mb-3">
       {% for item in site.data.profile.current_focus %}
-        <span class="hero-focus-pill">{{ item }}</span>
+        {% if item.tag %}
+          <a href="{{ item.tag | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}" class="hero-focus-pill">{{ item.text }}</a>
+        {% else %}
+          <span class="hero-focus-pill">{{ item.text | default: item }}</span>
+        {% endif %}
       {% endfor %}
     </div>
   {% endif %}
 
-  <p class="mb-0">
-    <a href="{{ '/about/' | relative_url }}" class="btn btn-outline-primary btn-sm">Learn More About Me →</a>
-  </p>
+  <div class="hero-footer d-flex flex-wrap align-items-center justify-content-between gap-2">
+    <p class="mb-0">
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-outline-primary btn-sm">Learn More About Me →</a>
+    </p>
+
+    {% assign latest = site.posts.first %}
+    {% if latest %}
+      <p class="hero-latest mb-0">
+        Latest:
+        <a href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
+        &middot;
+        {{ site.posts | size }} post{% unless site.posts.size == 1 %}s{% endunless %}
+      </p>
+    {% endif %}
+  </div>
 </div>
 
 <!-- Posts List -->
@@ -118,6 +135,14 @@ refactor: true
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
+    {% if pinned_num > 0 and forloop.index0 == 0 %}
+      <h2 class="post-list-heading">
+        <i class="fas fa-thumbtack fa-fw"></i> Pinned
+      </h2>
+    {% endif %}
+    {% if pinned_num > 0 and forloop.index0 == pinned_num %}
+      <h2 class="post-list-heading mt-4">Recent Posts</h2>
+    {% endif %}
     <article class="card-wrapper card">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         <div class="col-md-5">

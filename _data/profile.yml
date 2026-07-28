@@ -2,9 +2,12 @@ location: "Cambridge, UK"
 timezone: "Europe/London"
 
 current_focus:
-  - "LLMs for scientific workflows"
-  - "GPU performance and inference optimization"
-  - "Reproducible Linux-first ML tooling"
+  - text: "LLMs for scientific workflows"
+    tag: "local LLMs"
+  - text: "GPU performance and inference optimization"
+    tag: "gpu"
+  - text: "Reproducible Linux-first ML tooling"
+    tag: "linux"
 
 tools_stack:
   - section: "Operating Systems"

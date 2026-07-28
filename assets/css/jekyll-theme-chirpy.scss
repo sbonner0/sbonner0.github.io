@@ -373,6 +373,14 @@ footer a:hover,
   color: var(--heading-color);
 }
 
+.hero-eyebrow {
+  color: var(--text-muted-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .hero-avatar {
   width: 88px;
   height: 88px;
@@ -402,6 +410,67 @@ footer a:hover,
   border: 1px solid var(--main-border-color);
   color: var(--text-color);
   font-size: 0.85rem;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+a.hero-focus-pill:hover {
+  border-color: var(--nord-link-hover);
+  color: var(--nord-link-hover);
+  text-decoration: none;
+}
+
+.hero-latest {
+  color: var(--text-muted-color);
+  font-size: 0.85rem;
+
+  a {
+    color: var(--text-muted-color);
+    text-decoration: underline;
+    text-decoration-color: var(--main-border-color);
+
+    &:hover {
+      color: var(--nord-link-hover);
+      text-decoration-color: var(--nord-link-hover);
+    }
+  }
+}
+
+/* Subtle entrance animation for the hero on first paint */
+@keyframes home-hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-hero-animate {
+  animation: home-hero-fade-in 0.5s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-animate {
+    animation: none;
+  }
+}
+
+.post-list-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  i {
+    color: var(--nord-link-hover);
+    font-size: 0.9rem;
+  }
 }
 
 /* Smooth, subtle lift on post card hover instead of an instant color snap */
