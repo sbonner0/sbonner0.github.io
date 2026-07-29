@@ -1,6 +1,3 @@
-location: "Cambridge, UK"
-timezone: "Europe/London"
-
 current_focus:
   - text: "LLMs for scientific workflows"
     tag: "local LLMs"

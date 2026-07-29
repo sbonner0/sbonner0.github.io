@@ -4,20 +4,17 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-Hi, I’m Stephen Bonner — a machine learning researcher currently working in pre-clinical drug discovery at AstraZeneca (Views expressed here are my own and do not represent my employer). I’m particularly interested in LLMs for scientific usecases, GPU performance, open-source software, and Linux-based systems. This blog is a place to document experiments, deep-dives, and lessons learned—especially when things don’t go quite as planned.
+Hi, I’m Stephen Bonner, a machine learning researcher based in Cambridge, UK, currently working in pre-clinical drug discovery at AstraZeneca. (Views expressed here are my own and don’t represent my employer.) I hold a PhD in machine learning from Durham University, and spent several years across postdoc and research roles, including a joint postdoc between AstraZeneca and Mila, before joining AstraZeneca full-time.
 
-Outside of work, I enjoy cycling, skiing, photography, and tinkering with hardware and home lab setups - these topics may occasionally feature here as well.
+I’m particularly interested in applying LLMs to scientific problems, GPU performance, and Linux-based systems. This blog is where I document experiments, deep-dives, and lessons learned, especially when things don’t go quite as planned.
 
-Please feel free to contact me on [Linkedin](https://uk.linkedin.com/in/stephen-bonner-ml).
+Outside of work, I enjoy cycling, skiing, photography, and tinkering with hardware and home lab setups. These topics may occasionally show up here too.
 
-## Personal Metadata
-
-**Location:** {{ site.data.profile.location }}  
-**Timezone:** {{ site.data.profile.timezone }}
+Feel free to get in touch on [LinkedIn](https://uk.linkedin.com/in/stephen-bonner-ml).
 
 ## Current Focus
 
-Some current areas of focus and interest (outside of my day job) include:
+A few things I’m currently digging into:
 
 {% for item in site.data.profile.current_focus %}
 - {{ item.text | default: item }}
@@ -25,7 +22,7 @@ Some current areas of focus and interest (outside of my day job) include:
 
 ## Tools Stack
 
-Some of the tools and technologies I enjoy using(in no particular order and by no means an exhaustive list) include:
+Some of the tools and technologies I enjoy using (in no particular order and by no means an exhaustive list) include:
 
 {% for group in site.data.profile.tools_stack %}
 ### {{ group.section }}
